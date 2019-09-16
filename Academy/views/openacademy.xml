@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="idea_category_list2" model="ir.ui.view">
+    <field name="name">id.category.list2</field>
+    <field name="model">openacademy.course</field>
+    <field name="inherit_id" ref="openacademy.course_form_view"/>
+    <field name="arch" type="xml">
+        <!-- find field description and add the field
+             idea_ids after it -->
+        <xpath expr="//field[@name='description']" position="after">
+          <field name="idea_ids" string="Number of ideas"/>
+        </xpath>
+    </field>
+	</record>
+
+	<menuitem id="main_openacademy_menu" name="Academy" sequence="9"/>
+
+
+</odoo>

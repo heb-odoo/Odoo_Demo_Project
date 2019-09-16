@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record model="ir.module.category" id="BusDemoApp_category">
+            <field name="name">BusDemoApp</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <record model="res.groups" id="group_BusDemoApp_students">
+            <field name="name">BusDemoApp Students</field>
+            <field name="category_id" ref="BusDemoApp_category"/>
+        </record>
+
+        <record model="res.groups" id="group_BusDemoApp_teacher">
+            <field name="name">BusDemoApp Teacher</field>
+            <field name="implied_ids" eval="[(4, ref('group_BusDemoApp_students'))]"/>
+            <field name="category_id" ref="BusDemoApp_category"/>
+        </record>
+
+    </data>
+</odoo>

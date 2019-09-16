@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+        <record model="ir.actions.act_window" id="image_list_action">
+            <field name="name">ImageData</field>
+            <field name="res_model">busdemoapp.bus</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create the first image name
+                </p>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="image_form_view">
+            <field name="name">image.form</field>
+            <field name="model">busdemoapp.bus</field>
+            <field name="arch" type="xml">
+                <form string="Bus Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="image" widget='image' options='{"preview_image":"image_medium"}'/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="image_tree_view">
+            <field name="name">image.tree</field>
+            <field name="model">busdemoapp.bus</field>
+            <field name="arch" type="xml">
+                <tree string="Bus Tree">
+                    <field name="name"/>
+                    <field name="image" widget='image'/>
+                </tree>
+            </field>
+        </record>
+
+        <menuitem id="main_Bus_menu" name="Bus Demo App" web_icon="Bus_Demo_App,static/description/demo.jpg"/>
+     
+        <menuitem id="image_menu" name="ImageData" parent="main_Bus_menu"
+                  action="image_list_action" groups="Bus_Demo_App.group_BusDemoApp_teacher"
+
+/>
+
+        <record id="ir_actions_client_Teacher" model="ir.actions.client">
+            <field name="name">Teacher Template</field>
+            <field name="tag">teachertemp</field>
+        </record>
+
+        <menuitem id="ir_action" name="Teacher" parent="main_Bus_menu" action="ir_actions_client_Teacher"  groups="Bus_Demo_App.group_BusDemoApp_teacher"/>
+
+        <record id="ir_actions_client_Student" model="ir.actions.client">
+            <field name="name">Student Template</field>
+            <field name="tag">studenttemp</field>
+        </record>
+
+        <menuitem id="ir_action_st" name="Student" parent="main_Bus_menu" action="ir_actions_client_Student"  groups="Bus_Demo_App.group_BusDemoApp_students"/>
+
+</odoo>

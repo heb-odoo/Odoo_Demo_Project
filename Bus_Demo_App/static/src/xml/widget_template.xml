@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="template" xml:space="preserve">
+	
+	<t t-name="teacher_template">
+		<div class="container">
+		   <div id="new_widget"/>
+ 		</div>
+	</t>
+	
+	<t t-name="teacher_widget">
+		<div class="input_group w-25 mb-3">
+			
+			<input type="text" style=" margin-top: 100px;margin-right: 150px;margin-left: 80px;" class="form-control quantity text"/>
+			
+			<div class="input-group-append">
+				<button style=" margin-top: 10px;margin-left: 80px;" class="btn btn-primary float_left d-md-inline-block submit" href="#">
+					Send
+				</button>
+			</div>		
+		</div>
+	</t>
+
+	<t t-name="student_template">
+		<div class="container">
+ 		   <div id="student"/>
+ 		</div>
+	</t>
+
+	<t t-name="student_widget">
+		<div class="input-group-append " t-if="!studentData">
+			<button style="margin-top: 50px;" class="btn btn-primary float_left d-md-inline-block Join" href="#">
+				Join Group
+			</button>
+		</div>
+
+		<div class="input_group w-25 mb-3" t-if="studentData">
+			<section class="image-preview mt-5">
+                <div class="center-image">
+                    <img t-if="img" t-attf-src="data:image/png;base64,#{img.image}" class="img img-responsive" />
+                </div>
+            </section>
+			
+			<input type="text" style="margin-top: 10px; margin-right: 150px;" class="form-control quantity2 text"/>
+			
+			<div class="input-group-append">
+				<button style=" margin-top: 10px;" class="btn btn-primary float_left d-md-inline-block ok" href="#">
+					Ok
+				</button>
+			</div>
+		</div>
+
+	</t>
+
+
+</templates>

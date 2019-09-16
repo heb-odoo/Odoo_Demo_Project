@@ -1,0 +1,16 @@
+.image-preview {
+        background-color: #ccc;
+        display: block;
+        height: 400px;
+        width: 600px;
+        .center-image {
+            display:block;
+            text-align: center;
+            vertical-align: middle;
+            margin: 0 auto;
+            .img {
+                margin-top:100px;
+                height: auto;
+            }
+        }
+    }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+        <record model="ir.actions.act_window" id="data_list_action">
+            <field name="name">Hemali</field>
+            <field name="res_model">hemali.name</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create the first image name
+                </p>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="data_form_view">
+            <field name="name">data.form</field>
+            <field name="model">hemali.name</field>
+            <field name="arch" type="xml">
+                <form string="Data Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="data_tree_view">
+            <field name="name">data.tree</field>
+            <field name="model">hemali.name</field>
+            <field name="arch" type="xml">
+                <tree string="Data Tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <menuitem id="main_menu" name="Hemali" web_icon="Hemali,static/description/demo.jpg"/>
+     
+        <menuitem id="data_menu" name="HData" parent="main_menu"
+                  action="data_list_action"/>
+</odoo>
